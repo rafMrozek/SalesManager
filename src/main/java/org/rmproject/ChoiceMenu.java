@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ChoiceMenu {
     public void start() {
         Scanner scanner = new Scanner(System.in);
+        ImporterCSV importerCSV = new ImporterCSV();
 
         while (true) {
             System.out.println("Wybierz opcję:");
@@ -20,7 +21,7 @@ public class ChoiceMenu {
             int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
-                case 1 -> System.out.println("Wybrano: 1. Wczytaj CSV z zamówieniami");
+                case 1 -> ImporterCSV.importOrders(); //("Wybrano: 1. Wczytaj CSV z zamówieniami");
                 // Tutaj umieścić kod dla opcji 1
                 case 2 -> System.out.println("Wybrano: 2. Wczytaj plik z cenami zakupu");
                 // Tutaj umieścić kod dla opcji 2
