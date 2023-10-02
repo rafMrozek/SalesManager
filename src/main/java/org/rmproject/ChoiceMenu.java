@@ -23,7 +23,7 @@ public class ChoiceMenu {
             switch (choice) {
                 case 1 -> ImporterCSV.importOrders(); //("Wybrano: 1. Wczytaj CSV z zamówieniami");
                 // Tutaj umieścić kod dla opcji 1
-                case 2 -> System.out.println("Wybrano: 2. Wczytaj plik z cenami zakupu");
+                case 2 -> org.rmproject.ExcImporter.importOffers(); //"Wybrano: 2. Wczytaj plik z cenami zakupu");
                 // Tutaj umieścić kod dla opcji 2
                 case 3 -> System.out.println("Wybrano: 3. Podgląd zamówień");
                 // Tutaj umieścić kod dla opcji 3
