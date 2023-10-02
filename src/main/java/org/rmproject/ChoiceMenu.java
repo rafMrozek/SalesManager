@@ -5,6 +5,8 @@ public class ChoiceMenu {
     public void start() {
         Scanner scanner = new Scanner(System.in);
         ImporterCSV importerCSV = new ImporterCSV();
+        ExcImporter excImporter = new ExcImporter();
+        ReadingData displayOrders = new ReadingData();
 
         while (true) {
             System.out.println("Wybierz opcję:");
@@ -23,9 +25,9 @@ public class ChoiceMenu {
             switch (choice) {
                 case 1 -> ImporterCSV.importOrders(); //("Wybrano: 1. Wczytaj CSV z zamówieniami");
                 // Tutaj umieścić kod dla opcji 1
-                case 2 -> org.rmproject.ExcImporter.importOffers(); //"Wybrano: 2. Wczytaj plik z cenami zakupu");
+                case 2 -> ExcImporter.importOffers(); //"Wybrano: 2. Wczytaj plik z cenami zakupu");
                 // Tutaj umieścić kod dla opcji 2
-                case 3 -> System.out.println("Wybrano: 3. Podgląd zamówień");
+                case 3 -> ReadingData.displayOrders(); //("Wybrano: 3. Podgląd zamówień");
                 // Tutaj umieścić kod dla opcji 3
                 case 4 -> System.out.println("Wybrano: 4. Podgląd ofert");
                 //Tutaj umieścić kod dla opcji 4
