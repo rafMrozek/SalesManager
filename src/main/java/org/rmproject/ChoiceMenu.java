@@ -29,7 +29,7 @@ public class ChoiceMenu {
                 // Tutaj umieścić kod dla opcji 2
                 case 3 -> ReadingData.displayOrders(); //("Wybrano: 3. Podgląd zamówień");
                 // Tutaj umieścić kod dla opcji 3
-                case 4 -> System.out.println("Wybrano: 4. Podgląd ofert");
+                case 4 -> ReadingOffers.displayOffers(); //("Wybrano: 4. Podgląd ofert");
                 //Tutaj umieścić kod dla opcji 4
                 case 5 -> System.out.println("Wybrano: 5. Zmień cenę dla danego produktu");
                 //Tutaj umieścić kod dla opcji 5
