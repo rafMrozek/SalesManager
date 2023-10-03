@@ -1,26 +1,34 @@
 package org.rmproject;
 
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class ReadingData {
     public static void displayOrders() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/orders", "root","");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM ORDERS");
-            while(rs.next()){
-                String name = rs.getString("name");
-                System.out.println(name);
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rmp", "root", "");
+
+            String selectQuery = "SELECT * FROM orders";
+            PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                int quantity = resultSet.getInt("quantity");
+                double price = resultSet.getDouble("price");
+                String currency = resultSet.getString("currency");
+
+                System.out.println("Numer zamówienia: " + id + ", Nazwa: " + name + ", Ilość: " + quantity + ", Cena sprzedaży: " + price + ", Waluta: " + currency);
             }
 
-            System.out.println("Udało się połączyć z bazą danych");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadingData.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(ReadingData.class.getName()).log(Level.SEVERE, null, ex);
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
