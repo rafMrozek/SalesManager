@@ -1,12 +1,19 @@
 package org.rmproject;
 
 import java.util.Scanner;
+
+import static org.rmproject.ExcImporter.importOffers;
+import static org.rmproject.ImporterCSV.importOrders;
+import static org.rmproject.ReadingOffers.displayOffers;
+import static org.rmproject.ReadingOrders.displayOrders;
+
 public class ChoiceMenu {
     public void start() {
         Scanner scanner = new Scanner(System.in);
         ImporterCSV importerCSV = new ImporterCSV();
         ExcImporter excImporter = new ExcImporter();
-        ReadingData displayOrders = new ReadingData();
+        ReadingOrders displayOrders = new ReadingOrders();
+        ReadingOffers displayOffers = new ReadingOffers();
 
         while (true) {
             System.out.println("Wybierz opcję:");
@@ -23,13 +30,13 @@ public class ChoiceMenu {
             int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
-                case 1 -> ImporterCSV.importOrders(); //("Wybrano: 1. Wczytaj CSV z zamówieniami");
+                case 1 -> importOrders(); //("Wybrano: 1. Wczytaj CSV z zamówieniami");
                 // Tutaj umieścić kod dla opcji 1
-                case 2 -> ExcImporter.importOffers(); //"Wybrano: 2. Wczytaj plik z cenami zakupu");
+                case 2 -> importOffers(); //"Wybrano: 2. Wczytaj plik z cenami zakupu");
                 // Tutaj umieścić kod dla opcji 2
-                case 3 -> ReadingData.displayOrders(); //("Wybrano: 3. Podgląd zamówień");
+                case 3 -> displayOrders(); //("Wybrano: 3. Podgląd zamówień");
                 // Tutaj umieścić kod dla opcji 3
-                case 4 -> ReadingOffers.displayOffers(); //("Wybrano: 4. Podgląd ofert");
+                case 4 -> displayOffers(); //("Wybrano: 4. Podgląd ofert");
                 //Tutaj umieścić kod dla opcji 4
                 case 5 -> System.out.println("Wybrano: 5. Zmień cenę dla danego produktu");
                 //Tutaj umieścić kod dla opcji 5

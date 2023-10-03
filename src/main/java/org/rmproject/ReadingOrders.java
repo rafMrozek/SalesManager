@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class ReadingData {
+public class ReadingOrders {
     public static void displayOrders() {
         try {
 
