@@ -6,6 +6,7 @@ import static org.rmproject.ExcImporter.importOffers;
 import static org.rmproject.ImporterCSV.importOrders;
 import static org.rmproject.ReadingOffers.displayOffers;
 import static org.rmproject.ReadingOrders.displayOrders;
+import static org.rmproject.UpdateData.updateOffers;
 
 public class ChoiceMenu {
     public void start() {
@@ -14,6 +15,7 @@ public class ChoiceMenu {
         ExcImporter excImporter = new ExcImporter();
         ReadingOrders displayOrders = new ReadingOrders();
         ReadingOffers displayOffers = new ReadingOffers();
+        UpdateData updateData = new UpdateData();
 
         while (true) {
             System.out.println("Wybierz opcję:");
@@ -38,7 +40,7 @@ public class ChoiceMenu {
                 // Tutaj umieścić kod dla opcji 3
                 case 4 -> displayOffers(); //("Wybrano: 4. Podgląd ofert");
                 //Tutaj umieścić kod dla opcji 4
-                case 5 -> System.out.println("Wybrano: 5. Zmień cenę dla danego produktu");
+                case 5 -> updateOffers(); //("Wybrano: 5. Zmień cenę dla danego produktu");
                 //Tutaj umieścić kod dla opcji 5
                 case 6 -> System.out.println("Wybrano: 6. Zestawienie miesięczne sprzedaży");
                 //Tutaj umieścić kod dla opcji 6
