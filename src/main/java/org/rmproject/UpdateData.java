@@ -27,8 +27,8 @@ public class UpdateData {
             String name = scanner.nextLine();
 
             PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
-            preparedStatement.setString(1, name);
-            preparedStatement.setInt(2, purchasePrice);
+            preparedStatement.setInt(1, purchasePrice);
+            preparedStatement.setString(2, name);
             preparedStatement.executeUpdate();
 
             System.out.println("Zaktualizowano cenę zakupu");

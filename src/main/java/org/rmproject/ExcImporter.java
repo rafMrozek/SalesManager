@@ -34,7 +34,7 @@ public class ExcImporter {
 
             lineReader.readLine();
             while ((lineText = lineReader.readLine()) != null) {
-                String[] data = lineText.split(";");
+                String[] data = lineText.split(",");
 
 
                 String name = data[0];

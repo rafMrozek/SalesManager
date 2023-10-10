@@ -25,6 +25,9 @@ public class MonthlySales {
             String query = "UPDATE orders SET priceFromOffers = (SELECT purchasePrice FROM offers WHERE offers.name = orders.name)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
+            int rowsAffected = preparedStatement.executeUpdate();
+            System.out.println("Liczba zmienionych wierszy: " + rowsAffected);
+
             ResultSet resultSet = preparedStatement.executeQuery(query);
             String query1 = "SELECT SUM(" + purchasePrice + ")"; //, SUM(" + price + ") FROM orders");
 

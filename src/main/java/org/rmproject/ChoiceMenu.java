@@ -46,8 +46,11 @@ public class ChoiceMenu {
                 //Tutaj umieścić kod dla opcji 4
                 case 5 -> updateOffers(); //("Wybrano: 5. Zmień cenę dla danego produktu");
                 //Tutaj umieścić kod dla opcji 5
-                case 6 -> addCosts(scanner);
-                //Wybrano: 6. Zestawienie miesięczne sprzedaży");
+                case 6 -> {
+                    addCosts(scanner);
+                    sumValues();
+                    //Wybrano: 6. Zestawienie miesięczne sprzedaży");
+                }
                 case 7 -> System.out.println("Wybrano: 7. Moje rozliczenie");
                 //Tutaj umieścić kod dla opcji 7
                 case 0 -> {
