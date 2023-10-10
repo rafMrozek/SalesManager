@@ -14,6 +14,7 @@ public class UpdateData {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rmp", "root", "");
 
             String updateQuery = "UPDATE offers SET purchasePrice=? WHERE name=?";
+            //Prepared statment brakuje?
 
 
             Scanner scanner = new Scanner(System.in);

@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 import static org.rmproject.ExcImporter.importOffers;
 import static org.rmproject.ImporterCSV.importOrders;
+import static org.rmproject.MonthlySales.addCosts;
+import static org.rmproject.MonthlySales.sumValues;
 import static org.rmproject.ReadingOffers.displayOffers;
 import static org.rmproject.ReadingOrders.displayOrders;
 import static org.rmproject.UpdateData.updateOffers;
+
 
 public class ChoiceMenu {
     public void start() {
@@ -16,6 +19,7 @@ public class ChoiceMenu {
         ReadingOrders displayOrders = new ReadingOrders();
         ReadingOffers displayOffers = new ReadingOffers();
         UpdateData updateData = new UpdateData();
+        MonthlySales monthlySales = new MonthlySales();
 
         while (true) {
             System.out.println("Wybierz opcję:");
@@ -42,8 +46,8 @@ public class ChoiceMenu {
                 //Tutaj umieścić kod dla opcji 4
                 case 5 -> updateOffers(); //("Wybrano: 5. Zmień cenę dla danego produktu");
                 //Tutaj umieścić kod dla opcji 5
-                case 6 -> System.out.println("Wybrano: 6. Zestawienie miesięczne sprzedaży");
-                //Tutaj umieścić kod dla opcji 6
+                case 6 -> addCosts(scanner);
+                //Wybrano: 6. Zestawienie miesięczne sprzedaży");
                 case 7 -> System.out.println("Wybrano: 7. Moje rozliczenie");
                 //Tutaj umieścić kod dla opcji 7
                 case 0 -> {
