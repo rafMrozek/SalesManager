@@ -4,9 +4,10 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class MonthlySales {
+    private static double costs;
     public static void addCosts(Scanner scanner) {
         System.out.println("Podaj swoje koszty: ");
-        double costs = Double.parseDouble(scanner.nextLine());
+        costs = Double.parseDouble(scanner.nextLine());
     }
     public static void sumValues() {
         try {
@@ -24,8 +25,15 @@ public class MonthlySales {
             if (resultSet.next()) {
                 double sumPurchasePrice = resultSet.getDouble("sumPurchasePrice");
                 double sumSellingPrice = resultSet.getDouble("sumSellingPrice");
-                System.out.println("Suma cen zakupu: " + sumPurchasePrice);
-                System.out.println("Suma cen sprzedaży: " + sumSellingPrice);
+
+                double profit = (sumSellingPrice - sumPurchasePrice);
+                double finalProfit = (profit - costs);
+
+                System.out.println("Miesięczne zestawienie sprzedaży: ");
+                System.out.println("Suma (ceny zakupu): " + sumPurchasePrice);
+                System.out.println("Suma (cena sprzedaży): " + sumSellingPrice);
+                System.out.println("Koszty dodatkowe: " + costs);
+                System.out.println("Zysk końcowy: " + finalProfit + "PLN");
             }
 
             resultSet.close();
