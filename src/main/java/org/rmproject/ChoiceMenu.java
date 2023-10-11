@@ -6,6 +6,7 @@ import static org.rmproject.ExcImporter.importOffers;
 import static org.rmproject.ImporterCSV.importOrders;
 import static org.rmproject.MonthlySales.addCosts;
 import static org.rmproject.MonthlySales.sumValues;
+import static org.rmproject.MySettlement.myCosts;
 import static org.rmproject.ReadingOffers.displayOffers;
 import static org.rmproject.ReadingOrders.displayOrders;
 import static org.rmproject.UpdateData.updateOffers;
@@ -20,6 +21,7 @@ public class ChoiceMenu {
         ReadingOffers displayOffers = new ReadingOffers();
         UpdateData updateData = new UpdateData();
         MonthlySales monthlySales = new MonthlySales();
+        MySettlement mySettlement = new MySettlement();
 
         while (true) {
             System.out.println("Wybierz opcję:");
@@ -51,7 +53,7 @@ public class ChoiceMenu {
                     sumValues();
                     //Wybrano: 6. Zestawienie miesięczne sprzedaży");
                 }
-                case 7 -> System.out.println("Wybrano: 7. Moje rozliczenie");
+                case 7 -> myCosts(scanner); //"Wybrano: 7. Moje rozliczenie");
                 //Tutaj umieścić kod dla opcji 7
                 case 0 -> {
                     System.out.println("Wybrano wyjście");
