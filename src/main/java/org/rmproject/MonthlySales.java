@@ -19,7 +19,7 @@ public class MonthlySales {
             int rowsAffected = preparedStatement.executeUpdate();
             System.out.println("Liczba zmienionych wierszy: " + rowsAffected);
 
-            String sumQuery = "SELECT SUM(priceFromOffers) as sumPurchasePrice, SUM(price) as sumSellingPrice FROM orders";
+            String sumQuery = "SELECT SUM(priceFromOffers * quantity) AS sumPurchasePrice, SUM(price * quantity) as sumSellingPrice FROM orders";
             ResultSet resultSet = preparedStatement.executeQuery(sumQuery);
 
             if (resultSet.next()) {
