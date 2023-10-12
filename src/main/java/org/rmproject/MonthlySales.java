@@ -11,7 +11,7 @@ public class MonthlySales {
     }
     public static void sumValues() {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rmp", "root", "");
+            Connection connection = DatabaseManager.getConnection();
 
             String updateQuery = "UPDATE orders SET priceFromOffers = (SELECT purchasePrice FROM offers WHERE offers.name = orders.name)";
             PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);

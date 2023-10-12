@@ -10,9 +10,6 @@ import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 public class ImporterCSV {
     public static void importOrders() {
-        String jdbcUrl="jdbc:mysql://localhost:3306/rmp";
-        String username="root";
-        String password="";
 
         String filePath="C:\\Users\\Rafał\\Desktop\\Java\\Importer CSVtoDB\\Przykładowy CSV z Allegro\\allFile.csv";
 
@@ -20,7 +17,7 @@ public class ImporterCSV {
 
         Connection connection=null;
         try {
-            connection= DriverManager.getConnection(jdbcUrl,username,password);
+            connection = DatabaseManager.getConnection();
             connection.setAutoCommit(false);
 
             String sql="insert into orders(id,name,quantity,price,currency) values (?,?,?,?,?)";

@@ -8,7 +8,7 @@ public class ReadingOffers {
     public static void displayOffers() {
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rmp", "root", "");
+            Connection connection = DatabaseManager.getConnection();
 
             String selectQuery = "SELECT * FROM offers";
             PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);

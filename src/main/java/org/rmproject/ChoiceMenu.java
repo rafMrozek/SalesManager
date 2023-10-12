@@ -2,7 +2,7 @@ package org.rmproject;
 
 import java.util.Scanner;
 
-import static org.rmproject.ExcImporter.importOffers;
+import static org.rmproject.ImporterExc.importOffers;
 import static org.rmproject.ImporterCSV.importOrders;
 import static org.rmproject.MonthlySales.addCosts;
 import static org.rmproject.MonthlySales.sumValues;
@@ -16,7 +16,7 @@ public class ChoiceMenu {
     public void start() {
         Scanner scanner = new Scanner(System.in);
         ImporterCSV importerCSV = new ImporterCSV();
-        ExcImporter excImporter = new ExcImporter();
+        ImporterExc excImporter = new ImporterExc();
         ReadingOrders displayOrders = new ReadingOrders();
         ReadingOffers displayOffers = new ReadingOffers();
         UpdateData updateData = new UpdateData();

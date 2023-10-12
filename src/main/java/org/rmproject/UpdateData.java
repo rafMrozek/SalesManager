@@ -11,10 +11,9 @@ public class UpdateData {
     public static void updateOffers() {
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rmp", "root", "");
+            Connection connection = DatabaseManager.getConnection();
 
             String updateQuery = "UPDATE offers SET purchasePrice=? WHERE name=?";
-            //Prepared statment brakuje?
 
 
             Scanner scanner = new Scanner(System.in);

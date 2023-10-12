@@ -9,7 +9,7 @@ public class ReadingOrders {
     public static void displayOrders() {
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rmp", "root", "");
+            Connection connection = DatabaseManager.getConnection();
 
             String selectQuery = "SELECT * FROM orders";
             PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);
