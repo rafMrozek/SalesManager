@@ -16,7 +16,7 @@ public class ImporterExc {
             Sheet sheet = workbook.getSheetAt(0);
 
 
-            Connection connection = DatabaseManager.getConnection();//DriverManager.getConnection("jdbc:mysql://localhost:3306/rmp","root","" );
+            Connection connection = DatabaseManager.getConnection();
 
             Row headerRow = sheet.getRow(0);
 
