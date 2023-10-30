@@ -5,14 +5,10 @@
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)  //usunąć
-* [Setup](#setup)
-* [Usage](#usage)
 * [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
+* [Inspiration](#inspiration)
 * [Contact](#contact)
-<!-- * [License](#license) -->
+
 
 
 ## General Information
